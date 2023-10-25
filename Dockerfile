@@ -6,6 +6,8 @@ ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 WORKDIR /opt
 
+RUN pwd && ls
+
 RUN echo "$PWD"
 
 RUN chmod -R 777 /opt/
@@ -23,6 +25,8 @@ ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 RUN mvn -DskipTests=true clean install
+
+RUN pwd && ls
 
 RUN ls -lrt
 
