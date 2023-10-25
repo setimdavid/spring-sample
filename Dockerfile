@@ -21,5 +21,5 @@ RUN mvn -DskipTests=true clean install
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /usr/src/app
 EXPOSE 8080
-COPY --from=builder /usr/src/app/target/simple-spring.jar /opt/app.jar
+COPY /usr/src/app/target/simple-spring.jar /opt/app.jar
 ENTRYPOINT ["java", "-jar", "/opt/app.jar" ]
