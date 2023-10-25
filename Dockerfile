@@ -22,6 +22,10 @@ ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
 RUN mvn -DskipTests=true clean install
 
+RUN ls -lrt
+
+RUN pwd
+
 EXPOSE 8080
 
 COPY /opt/target/sample-spring.jar /opt/app.jar
