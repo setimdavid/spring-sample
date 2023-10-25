@@ -24,7 +24,7 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /otp
 EXPOSE 8080
 
-CMD ["ls", "-lrt"]
+RUN ls -lrt
 
 COPY /otp/target/sample-spring.jar /opt/app.jar
 
