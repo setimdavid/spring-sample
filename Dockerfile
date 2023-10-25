@@ -16,7 +16,7 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
-CMD ["mvn", "--version"]
+RUN chmod -R 777 /opt/
 
 RUN mvn -DskipTests=true clean install
 
