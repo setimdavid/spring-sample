@@ -1,0 +1,4 @@
+com\springKafka\liveDashboard\configurations\WebSocketConfig.class
+com\springKafka\liveDashboard\LiveDashboardApplication.class
+com\springKafka\liveDashboard\services\KafkaConsumerService.class
+com\springKafka\liveDashboard\controllers\HomeController.class
