@@ -16,10 +16,16 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
+CMD ["mvn", "--version"]
+
 RUN mvn -DskipTests=true clean install
 
 FROM eclipse-temurin:17-jre-jammy
-WORKDIR /usr/src/app
+WORKDIR /otp
 EXPOSE 8080
-COPY /usr/src/app/target/simple-spring.jar /opt/app.jar
+
+CMD ["ls", "-lrt"]
+
+COPY /otp/simple-spring.jar /opt/app.jar
+
 ENTRYPOINT ["java", "-jar", "/opt/app.jar" ]
