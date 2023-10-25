@@ -20,10 +20,10 @@ CMD ["mvn", "--version"]
 
 RUN mvn -DskipTests=true clean install
 
-WORKDIR /otp
+WORKDIR /opt
 
 EXPOSE 8080
 
-COPY /otp/target/sample-spring.jar /opt/app.jar
+COPY /opt/target/sample-spring.jar /opt/app.jar
 
 ENTRYPOINT ["java", "-jar", "/opt/app.jar" ]
