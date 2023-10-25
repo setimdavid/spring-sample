@@ -20,11 +20,9 @@ CMD ["mvn", "--version"]
 
 RUN mvn -DskipTests=true clean install
 
-FROM eclipse-temurin:17-jre-jammy
 WORKDIR /otp
-EXPOSE 8080
 
-RUN ls -lrt
+EXPOSE 8080
 
 COPY /otp/target/sample-spring.jar /opt/app.jar
 
