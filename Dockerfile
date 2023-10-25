@@ -26,6 +26,6 @@ EXPOSE 8080
 
 CMD ["ls", "-lrt"]
 
-COPY /otp/simple-spring.jar /opt/app.jar
+COPY /otp/sample-spring.jar /opt/app.jar
 
 ENTRYPOINT ["java", "-jar", "/opt/app.jar" ]
