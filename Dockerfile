@@ -4,6 +4,10 @@ ARG MAVEN_VERSION=3.6.3
 ARG USER_HOME_DIR="/root"
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
+WORKDIR /opt
+
+RUN chmod -R 777 /opt/
+
 # Install Java.
 RUN apk --update --no-cache add openjdk11 curl
 
@@ -16,11 +20,7 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
-RUN chmod -R 777 /opt/
-
 RUN mvn -DskipTests=true clean install
-
-WORKDIR /opt
 
 EXPOSE 8080
 
